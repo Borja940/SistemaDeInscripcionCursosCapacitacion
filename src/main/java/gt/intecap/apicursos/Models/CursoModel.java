@@ -3,10 +3,7 @@ package gt.intecap.apicursos.Models;
 import gt.intecap.apicursos.Models.Base.EntidadBase;
 import gt.intecap.apicursos.Models.enums.Modalidad;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,7 +34,7 @@ public class CursoModel extends EntidadBase {
 
     @NotNull(message = "El cupo es obligario")
     @Min(value= 1, message = "El cupo mínimo debe ser 1 participante")
-    @Min(value= 40, message = "El cupo máximo debe ser 40 participantes")
+    @Max(value= 40, message = "El cupo máximo debe ser 40 participantes")
     @Column(nullable = false)
     private Integer cupo;
 

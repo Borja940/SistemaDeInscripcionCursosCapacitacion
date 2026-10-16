@@ -75,7 +75,7 @@ public class CursoController {
             //desactivamos el curso en lugar de borrarlo de la base de datos
             curso.setActivo(false);
             cursoRepo.save(curso);
-            return ResponseEntity.ok().body("Curso deshabilitado correctamente (soft Delete)");
+            return ResponseEntity.ok().body("Curso deshabilitado correctamente ");
         }).orElse(ResponseEntity.notFound().build());//Retorna 404 si no existe
 
     }

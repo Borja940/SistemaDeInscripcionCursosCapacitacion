@@ -16,7 +16,7 @@ public interface InscripcionRepository extends JpaRepository<InscripcionModel, L
     long contarActivas(Long cursoId, EstadoInscripcion estado);
 
     //verificar si un participante tiene una matricula activa en el mismo curso
-    @Query("SELECT COUNT(i) > 0 FROM InscripcionModel i WHERE i.curso.id = :cursoId AND i.participante.id = :participanteId AND i.estado = 'ACTIVA'")
+    @Query("SELECT COUNT(i) > 0 FROM InscripcionModel i WHERE i.curso.id = :cursoId AND i.participante.id = :participanteId AND i.estado = 'Activo'")
     boolean estaIncritoActivo(Long cursoId, Long participanteId);
 
     //Lista todas las inscripciones asociadas a un curso
